@@ -3,8 +3,8 @@ from data import quotes
 
 app = Flask(__name__)
 
-with open('data.json') as file:
-    content = file.read()
+# with open('data.json') as file:
+#     content = file.read()
 
 # Home Page
 
@@ -18,7 +18,7 @@ def home():
 
 @app.route('/api/v1/resource/all', methods=['GET'])
 def api_all():
-    return jsonify(content)
+    return jsonify(quotes)
 
 # Api with ID
 
