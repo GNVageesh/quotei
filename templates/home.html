@@ -5,171 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotei</title>
-    <style>
-        body {
-            background-color: rgb(41, 39, 39);
-        }
-
-        /* #heroimg {
-            display: block;
-            margin-right: auto;
-            margin-left: auto;
-            width: 100px;
-            height: 100px;
-        } */
-
-        .sidenav {
-            height: 100%;
-            /* 100% Full-height */
-            width: 0;
-            /* 0 width - change this with JavaScript */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Stay on top */
-            top: 0;
-            /* Stay at the top */
-            left: 0;
-            background-color: #111;
-            /* Black*/
-            overflow-x: hidden;
-            /* Disable horizontal scroll */
-            padding-top: 60px;
-            /* Place content 60px from the top */
-            transition: 0.5s;
-            /* 0.5 second transition effect to slide in the sidenav */
-        }
-
-        /* The navigation menu links */
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            text-align: center;
-            display: block;
-            transition: 0.3s;
-        }
-
-        /* When you mouse over the navigation links, change their color */
-        .sidenav a:hover {
-            color: #ffffff;
-        }
-
-        /* Position and style the close button (top right corner) */
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-        #main {
-            transition: margin-left .5s;
-            padding: 20px;
-        }
-
-        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-
-        .container {
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .bar1,
-        .bar2,
-        .bar3 {
-            width: 35px;
-            height: 5px;
-            background-color: #fff;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-
-        /* Rotate first bar */
-        .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-            transform: rotate(-45deg) translate(-9px, 6px);
-        }
-
-        /* Fade out the second bar */
-        .change .bar2 {
-            opacity: 0;
-        }
-
-        /* Rotate last bar */
-        .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px);
-            transform: rotate(45deg) translate(-8px, -8px);
-        }
-
-        .headTitle {
-            font-family: 'Megrim';
-            text-align: center;
-            color: #fff;
-            line-height: 0.5;
-            margin: 0;
-        }
-
-        .buttonsGroup {
-            margin-top: 25px;
-            text-align: center;
-        }
-
-        .button {
-            background-color: rgb(41, 39, 39);
-            border-radius: 15px;
-            padding: 16px 30px;
-            text-align: center;
-            font-weight: bolder;
-            font-family: 'Megrim';
-            font-size: 20px;
-            margin: 4px 4px;
-            transition-duration: 0.5s;
-            cursor: pointer;
-        }
-
-        .btn1 {
-            color: white;
-            border: 2px solid #4CAF50;
-        }
-
-        .btn1:hover {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .btn2 {
-            color: white;
-            border: 2px solid #008CBA;
-        }
-
-        .btn2:hover {
-            background-color: #008CBA;
-            color: white;
-        }
-
-        .btn3 {
-            color: white;
-            border: 2px solid #f44336;
-        }
-
-        .btn3:hover {
-            background-color: #f44336;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <body>
@@ -191,8 +27,13 @@
     <div id="main">
         <!-- <img id="heroimg" src="{{url_for('static', filename='logo1.png')}}" alt=""> -->
         <div class="headTitle">
-            <h1 id="title">Quotei API</h1>
-            <h5>An API To Get Quotes For Any Occasion</h5>
+            <div class="imageLogo">
+                <img id="logo" src="{{url_for('static', filename='images/logo.png')}}" alt="">
+            </div>
+            <div class="titles">
+                <h1 id="title">Quotei API</h1>
+                <h5>An API To Get Quotes For Any Occasion</h5>
+            </div>
         </div>
         <div class="buttonsGroup">
             <a href="/docs">

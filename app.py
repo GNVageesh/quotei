@@ -20,14 +20,14 @@ def docs():
 # All Quotes Pages
 
 
-@app.route('/api/v1/resource/all', methods=['GET'])
+@app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
     return jsonify(quotes)
 
 # Api with ID
 
 
-@app.route('/api/v1/resource/quotes', methods=['GET'])
+@app.route('/api/v1/res/quotes', methods=['GET'])
 def api_id():
     if 'id' in request.args:
         id = int(request.args['id'])
