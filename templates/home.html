@@ -129,21 +129,19 @@
 
         .button {
             background-color: rgb(41, 39, 39);
-            /* Green */
-            border: none;
-            color: white;
-            padding: 16px 32px;
+            border-radius: 15px;
+            padding: 16px 30px;
             text-align: center;
-            text-decoration: none;
-            font-size: 22px;
-            margin: 4px 2px;
-            transition-duration: 0.4s;
+            font-weight: bolder;
+            font-family: 'Megrim';
+            font-size: 20px;
+            margin: 4px 4px;
+            transition-duration: 0.5s;
             cursor: pointer;
         }
 
         .btn1 {
-            background-color: white;
-            color: black;
+            color: white;
             border: 2px solid #4CAF50;
         }
 
@@ -153,8 +151,7 @@
         }
 
         .btn2 {
-            background-color: white;
-            color: black;
+            color: white;
             border: 2px solid #008CBA;
         }
 
@@ -164,20 +161,13 @@
         }
 
         .btn3 {
-            background-color: white;
-            color: black;
+            color: white;
             border: 2px solid #f44336;
         }
 
         .btn3:hover {
             background-color: #f44336;
             color: white;
-        }
-
-        .btn1 a {
-            text-decoration: none;
-            color: #000;
-            font-size: 22px;
         }
     </style>
 </head>
@@ -205,18 +195,19 @@
             <h5>An API To Get Quotes For Any Occasion</h5>
         </div>
         <div class="buttonsGroup">
-            <button class="button btn1">
-                <a href="">Documentation</a>
-            </button>
-            <button class="button btn2">
-                <a href="">GitHub Repository</a>
-            </button>
-            <button class="button btn3">
-                <a href="">Check API Page</a>
-            </button>
+            <a href="/docs">
+                <button class="button btn1">Documentation</button> </button>
+            </a>
+            <a href="https://github.com/GNVageesh/quotei">
+                <button class="button btn2">GitHub Repository</button> </button>
+            </a>
+            <a href="/api/v1/resource/all">
+                <button class="button btn3">Check API Page</button> </button>
+            </a>
         </div>
     </div>
 
+    <!-- Scripts-->
     <script>
         function openNav() {
             document.getElementById("sidebar").style.width = "250px";

@@ -3,15 +3,19 @@ from data import quotes
 
 app = Flask(__name__)
 
-# with open('data.json') as file:
-#     content = file.read()
-
 # Home Page
 
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def home():
     return render_template('home.html')
+
+# Docs Page
+
+
+@app.route('/docs')
+def docs():
+    return render_template('docs.html')
 
 # All Quotes Pages
 
