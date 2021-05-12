@@ -13,6 +13,13 @@ with open('data.json') as file:
 def home():
     return render_template('home.html')
 
+# 404 Page
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404page.html')
+
 # Docs Page
 
 
