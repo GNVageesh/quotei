@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 import json
+from data import quotes
 
 app = Flask(__name__)
 
@@ -25,7 +26,7 @@ def docs():
 
 @app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
-    return jsonify(data)
+    return jsonify(quotes)
 
 # Api with ID
 
@@ -40,7 +41,7 @@ def api_id():
 
     results = []
 
-    for i in data:
+    for i in quotes:
         if i['id'] == id:
             results.append(i)
 
