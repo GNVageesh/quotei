@@ -1,60 +1,31 @@
-{% extends 'base.html' %}
-{% block head %}{% endblock %}
+{% extends 'temp.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+{% endblock %}
 {% block body %}
-<div id="sidebar" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="/api/v1/res/all">API</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-</div>
 
-<div class="container" onclick="openNav()">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
-</div>
-
-<!-- Other parts of code here-->
-<div id="main">
-    <!-- <img id="heroimg" src="{{url_for('static', filename='logo1.png')}}" alt=""> -->
-    <div class="headTitle">
-        <div class="imageLogo">
-            <img id="logo" src="{{url_for('static', filename='images/logo.png')}}" alt="">
-        </div>
-        <div class="titles">
-            <h1 id="title">Quotei API</h1>
-            <h5>Quotes For Any Occasion</h5>
-        </div>
+<!-- <img id="heroimg" src="{{url_for('static', filename='logo1.png')}}" alt=""> -->
+<div class="headTitle">
+    <div class="imageLogo">
+        <img id="logo" src="{{url_for('static', filename='images/logo.png')}}" alt="">
     </div>
-    <div class="buttonsGroup">
-        <a href="/docs">
-            <button class="button btn1">Documentation</button> </button>
-        </a>
-        <a href="https://github.com/GNVageesh/quotei">
-            <button class="button btn2">GitHub Repository</button> </button>
-        </a>
-        <a href="/api/v1/res/all">
-            <button class="button btn3">Check API Page</button> </button>
-        </a>
+    <div class="titles">
+        <h1 id="title">Quotei API</h1>
+        <h5>Quotes For Any Occasion</h5>
     </div>
 </div>
-
+<div class="buttonsGroup">
+    <a href="/docs">
+        <button class="button btn1">Documentation</button> </button>
+    </a>
+    <a href="https://github.com/GNVageesh/quotei">
+        <button class="button btn2">GitHub Repository</button> </button>
+    </a>
+    <a href="/api/v1/res/all">
+        <button class="button btn3">Check API Page</button> </button>
+    </a>
+</div>
 <!-- Scripts-->
 <script>
-    function openNav() {
-        document.getElementById("sidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-    }
-
-    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-    function closeNav() {
-        document.getElementById("sidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-    }
-
-    function myFunction(x) {
-        x.classList.toggle("change");
-    }
 </script>
 {% endblock %}

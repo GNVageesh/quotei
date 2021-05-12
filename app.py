@@ -1,7 +1,10 @@
-from flask import Flask, jsonify, render_template, request, url_for
-from data import quotes
+from flask import Flask, jsonify, render_template, request
+import json
 
 app = Flask(__name__)
+
+with open('data.json') as file:
+    data = json.load(file)
 
 # Home Page
 
@@ -22,7 +25,7 @@ def docs():
 
 @app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
-    return jsonify(quotes)
+    return jsonify(data)
 
 # Api with ID
 
@@ -37,24 +40,11 @@ def api_id():
 
     results = []
 
-    for quote in quotes:
-        if quote['id'] == id:
-            results.append(quote)
+    for i in data:
+        if i['id'] == id:
+            results.append(i)
 
     return jsonify(results)
-
-
-@app.after_request
-def add_header(r):
-    """
-    Add headers to both force latest IE rendering engine or Chrome Frame,
-    and also to cache the rendered page for 10 minutes.
-    """
-    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    r.headers["Pragma"] = "no-cache"
-    r.headers["Expires"] = "0"
-    r.headers['Cache-Control'] = 'public, max-age=0'
-    return r
 
 
 if __name__ == "__main__":
