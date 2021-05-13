@@ -37,19 +37,35 @@ def api_all():
 # Api with ID
 
 
-@app.route('/api/v1/res/quotes', methods=['GET'])
+@app.route('/api/v1/res', methods=['GET'])
 def api_id():
     if 'id' in request.args:
         id = int(request.args['id'])
     else:
         # make a 404 page not found page
-        return "[ERROR] No ID field provided.... Please Specify an ID"
+        return render_template('404page.html')
 
     results = []
 
-    for i in data:
+    for i in data['quotes']:
         if i['id'] == id:
             results.append(i)
+
+    return jsonify(results)
+
+
+@app.route('/api/v1/res', methods=['GET'])
+def api_author():
+    if 'author' in request.args:
+        author = str(request.args['author'])
+    else:
+        return render_template('404page.html')
+
+    results = []
+
+    for i in data['quotes']:
+        if i['author'] == author:
+            results.extend(i)
 
     return jsonify(results)
 
