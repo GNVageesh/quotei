@@ -1,10 +1,20 @@
-from flask import Flask, jsonify, render_template, request, current_app
+from flask import Flask, render_template, request, make_response
+from json import *
 import json
 
 app = Flask(__name__)
 
 with open('data.json') as file:
     data = json.load(file)
+
+
+def jsonify(status=200, indent=4, sort_keys=True, **kwargs):
+    response = make_response(
+        dumps(dict(**kwargs), indent=indent, sort_keys=sort_keys))
+    response.headers['Content-Type'] = 'application/json; charset=utf-8'
+    response.headers['mimetype'] = 'application/json'
+    response.status_code = status
+    return response
 
 # Home Page
 
@@ -32,7 +42,7 @@ def docs():
 
 @app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
-    return current_app.response_class(json.dumps(data), mimetype="application/json")
+    return jsonify(**data)
 
 # Api with ID
 
