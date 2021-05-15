@@ -32,7 +32,7 @@ def docs():
 
 @app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
-    return jsonify(data)
+    return jsonify(**data)
 
 # Api with ID
 
@@ -67,7 +67,7 @@ def api_author():
         if i['author'] == author:
             results.extend(i)
 
-    return jsonify(results)
+    return jsonify(results, indents=2)
 
 
 if __name__ == "__main__":
