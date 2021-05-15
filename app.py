@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, jsonify
 from json import *
 import json
-from customFunctions import jsonify
+from customFunctions import cus_jsonify
 
 app = Flask(__name__)
 
@@ -35,7 +35,7 @@ def docs():
 
 @app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
-    return jsonify(**data)
+    return cus_jsonify(**data)
 
 # Api with ID
 
@@ -70,7 +70,7 @@ def api_author():
         if i['author'] == author:
             results.extend(i)
 
-    return jsonify(results, indents=2)
+    return jsonify(results)
 
 
 if __name__ == "__main__":
