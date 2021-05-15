@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, current_app
 import json
 
 app = Flask(__name__)
@@ -32,7 +32,7 @@ def docs():
 
 @app.route('/api/v1/res/all', methods=['GET'])
 def api_all():
-    return jsonify(**data)
+    return current_app.response_class(json.dumps(data), mimetype="application/json")
 
 # Api with ID
 
