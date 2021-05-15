@@ -8,7 +8,7 @@ with open('data.json') as file:
     data = json.load(file)
 
 
-def jsonify(status=200, indent=4, sort_keys=True, **kwargs):
+def jsonify(status=200, indent=2, sort_keys=True, **kwargs):
     response = make_response(
         dumps(dict(**kwargs), indent=indent, sort_keys=sort_keys))
     response.headers['Content-Type'] = 'application/json; charset=utf-8'
