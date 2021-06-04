@@ -29,6 +29,31 @@
             "id": 5,
             "author": "B. Washington",
             "quote": "The world cares very little about what a man or women knows; it is what a man or women is able to do that counts"
+        },
+        {
+            "id": 6,
+            "author": "R. W. Emerson",
+            "quote": "Big jobs usually go to the men, who prove their ability to outgrow small ones."
+        },
+        {
+            "id": 7,
+            "author": "M. Trevelyan",
+            "quote": "Never tell a young person that anything cannot be done. God may have been waiting centuries, for someone ignorant enough of the impossible to do that very thing!."
+        },
+        {
+            "id": 8,
+            "author": "Gandhi",
+            "quote": "When you believe you can, then you will acquire the ability to do it, even if you didn't have it in the beginning."
+        },
+        {
+            "id": 9,
+            "author": "J. Brymer",
+            "quote": "The ability to play the clarinet, is the ability to overcome the imperfection of the instrument. There is no such thing as perfect clarinet; never was and never will be."
+        },
+        {
+            "id": 10,
+            "author": "Swami Vivekananda",
+            "quote": "Take up one idea. Make that one idea your life - think of it, dream of it, live on that idea. Let the brain, muscles, nevrs, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success, that is the way great spiritual giants are produced."
         }
     ]
 }
